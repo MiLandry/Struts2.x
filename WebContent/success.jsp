@@ -10,5 +10,7 @@
 <body>
 Success Page!
 <s:property value="bestTutorialSite"/>
+<br>
+<a href="/struts2x">Home page</a>
 </body>
 </html>

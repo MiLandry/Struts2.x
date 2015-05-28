@@ -8,5 +8,7 @@
 </head>
 <body>
  struts2
+ <br>
+ <a href="/struts2x/tutorials/getTutorial?language=java">go to tutorial</a>
 </body>
 </html>
