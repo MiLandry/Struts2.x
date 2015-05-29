@@ -4,11 +4,19 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 
+		<package name="login" namespace="/" extends="struts-default">
+		<action name="login" class="hamsterofdark.action.LoginAction">
+			<result name="success">/searchForm.jsp</result>
+			<result name="failure">/login.jsp</result>
+		</action>
+	</package>
+
 	<package name="default" namespace="/tutorials" extends="struts-default">
 		<action name="getTutorial" class="hamsterofdark.action.TutorialAction">
 			<result name="success">/jsp/success.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
 		</action>
 	</package>
+	
 
 </struts>
