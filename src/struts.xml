@@ -6,8 +6,8 @@
 
 	<package name="default" namespace="/tutorials" extends="struts-default">
 		<action name="getTutorial" class="hamsterofdark.action.TutorialAction">
-			<result name="success">/success.jsp</result>
-			<result name="failure">/failure.jsp</result>
+			<result name="success">/jsp/success.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
 		</action>
 	</package>
 

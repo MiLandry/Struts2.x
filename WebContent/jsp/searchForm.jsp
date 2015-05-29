@@ -4,12 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Search</title>
 </head>
 <body>
- struts2
- <br>
- <a href="/struts2x/tutorials/getTutorial?language=java">go to tutorial</a>
- <a href="/struts2x/jsp/searchForm.jsp">go to form</a>
+<form method=post action="/struts2x/tutorials/getTutorial.action">
+<label>Language</label><input type="text" name="language"/>
+<br>
+<input type="submit" name="b1"/>
+
+</form>
+
 </body>
 </html>
