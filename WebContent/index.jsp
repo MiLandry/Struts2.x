@@ -10,6 +10,6 @@
  struts2
  <br>
  <a href="<%=request.getContextPath()%>/tutorials/getTutorial?language=java">go to tutorial</a>
- <a href="<%=request.getContextPath()%>/jsp/searchForm.jsp">go to form</a>
+ <a href="<%=request.getContextPath()%>/searchForm.jsp">go to form</a>
 </body>
 </html>
