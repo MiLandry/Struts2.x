@@ -11,6 +11,6 @@
 Success Page!
 <s:property value="bestTutorialSite"/>
 <br>
-<a href="/struts2x">Home page</a>
+<a href="<%=request.getContextPath()%>">Home page</a>
 </body>
 </html>

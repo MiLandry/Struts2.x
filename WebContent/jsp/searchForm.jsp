@@ -7,7 +7,7 @@
 <title>Search</title>
 </head>
 <body>
-<form method=post action="/struts2x/tutorials/getTutorial.action">
+<form method=post action="<%=request.getContextPath()%>/tutorials/getTutorial.action">
 <label>Language</label><input type="text" name="language"/>
 <br>
 <input type="submit" name="b1"/>
