@@ -1,6 +1,8 @@
 package hamsterofdark.action;
 
-public class LoginAction {
+import com.opensymphony.xwork2.ActionSupport;
+
+public class LoginAction extends ActionSupport {
 	private String username;
 	private String password;
 	
@@ -8,9 +10,9 @@ public class LoginAction {
 	{
 		if(username.equals("hamsterofdark") && password.equals("pass"))
 		{
-			return "success";
+			return SUCCESS;
 		}
-		return "failure";
+		return LOGIN;
 	}
 
 	public String getUsername() {
