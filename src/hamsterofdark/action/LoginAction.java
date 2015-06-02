@@ -1,10 +1,25 @@
 package hamsterofdark.action;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport {
 	private String username;
 	private String password;
+	
+	public void validate()
+	{
+		if (StringUtils.isEmpty(username))
+		{
+			addFieldError("username", "Username cannot be blank");
+		}
+		if (StringUtils.isEmpty(password))
+		{
+			addFieldError("password", "Password cannot be blank");
+		}
+	
+	}
 	
 	public String execute()
 	{
