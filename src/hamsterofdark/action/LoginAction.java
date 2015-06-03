@@ -1,6 +1,10 @@
 package hamsterofdark.action;
 
+import hamsterofdark.model.User;
+
 import org.apache.commons.lang.StringUtils;
+
+import service.LoginService;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -23,10 +27,11 @@ public class LoginAction extends ActionSupport {
 	
 	public String execute()
 	{
-		if(username.equals("hamsterofdark") && password.equals("pass"))
-		{
-			return SUCCESS;
-		}
+		User user= new User();
+		user.setUsername(username);
+		user.setPassword(password);
+		
+		if (LoginService.isValidUser(user)) return SUCCESS;
 		return LOGIN;
 	}
 
