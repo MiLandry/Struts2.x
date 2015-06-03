@@ -9,46 +9,37 @@ import service.LoginService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport {
-	private String username;
-	private String password;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8550475480942028383L;
+	private User user;
 	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public void validate()
 	{
-		if (StringUtils.isEmpty(username))
+		if (StringUtils.isEmpty(user.getUsername()))
 		{
-			addFieldError("username", "Username cannot be blank");
+			addFieldError("user.username", "Username cannot be blank");
 		}
-		if (StringUtils.isEmpty(password))
+		if (StringUtils.isEmpty(user.getPassword()))
 		{
-			addFieldError("password", "Password cannot be blank");
+			addFieldError("user.password", "Password cannot be blank");
 		}
 	
 	}
 	
 	public String execute()
 	{
-		User user= new User();
-		user.setUsername(username);
-		user.setPassword(password);
-		
 		if (LoginService.isValidUser(user)) return SUCCESS;
 		return LOGIN;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
 }
