@@ -7,13 +7,15 @@ import org.apache.commons.lang.StringUtils;
 import service.LoginService;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 
-public class LoginAction extends ActionSupport {
+public class LoginAction extends ActionSupport implements ModelDriven {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -8550475480942028383L;
-	private User user;
+
+	private User user = new User();
 	
 	public User getUser() {
 		return user;
@@ -27,11 +29,11 @@ public class LoginAction extends ActionSupport {
 	{
 		if (StringUtils.isEmpty(user.getUsername()))
 		{
-			addFieldError("user.username", "Username cannot be blank");
+			addFieldError("username", "Username cannot be blank");
 		}
 		if (StringUtils.isEmpty(user.getPassword()))
 		{
-			addFieldError("user.password", "Password cannot be blank");
+			addFieldError("password", "Password cannot be blank");
 		}
 	
 	}
@@ -40,6 +42,11 @@ public class LoginAction extends ActionSupport {
 	{
 		if (LoginService.isValidUser(user)) return SUCCESS;
 		return LOGIN;
+	}
+
+	@Override
+	public Object getModel() {
+	return user;
 	}
 
 }
