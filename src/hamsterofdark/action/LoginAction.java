@@ -27,6 +27,7 @@ public class LoginAction extends ActionSupport implements ModelDriven {
 
 	public void validate()
 	{
+		System.out.println("minor change");
 		if (StringUtils.isEmpty(user.getUsername()))
 		{
 			addFieldError("username", "Username cannot be blank");
